@@ -4,7 +4,7 @@
   
   <% if form.object.errors.any? %>
     <div class="alert alert-danger">
-      <% @user.errors.full_messages.each do |message| %>
+      <% form.object.errors.full_messages.each do |message| %>
         <div><%= message%></div>
       <%end%>
     </div>
@@ -12,6 +12,10 @@
   <div class="mb-3">
     <%= form.label :email, class:"mb-2"%>
     <%= form.text_field :email, class:"form-control", placeholder: "abc@gmail.com"%>
+
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
   <div class="mb-3">
     <%= form.label :password, class:"mb-2"%>
