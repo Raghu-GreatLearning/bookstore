@@ -1,0 +1,33 @@
+<h1>This is page after sigup/signIn</h1>
+
+<div class="mt-4">
+  <h3>Available books</h3>
+</div>
+
+<div class="p-3 mb-4 mt-3">
+  <% @books.each do |book|%>
+    <li class ="d-flex gap-3 p-3 shadow ">
+        <div class="fs-5 text-primary me-2">
+          <%= book.title%>
+        </div>
+        <div >By
+          <span class="fs-5 text-danger me-2">
+          <%= book.author%></span>
+        </div>
+        <div>Part
+          <span class="fs-5 text-info me-2 ms-1">
+          <%= book.volume%></span>
+        </div>
+        <div >published in
+          <span class="fs-5 text-danger me-5 ms-1 ">
+          <%= book.published_in%></span>
+        </div>
+        <div class="ms-auto">
+          <div class="btn btn-warning">Issue Book</div>
+          <div class="btn btn-success">Show Details</div>
+        </div>
+    </li>
+  <% end %>
+</div>
+
+<%= link_to "Add new Book", addBook_path, class:"nav-link"%>

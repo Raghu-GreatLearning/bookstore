@@ -11,8 +11,11 @@
 
       <div class="navbar-nav ms-auto mb-2">
           <% if Current.user%>
-              <span class="text-primary d-flex align-items-center border rounded fw-bold">
-                <%= link_to Current.user.email,class:"nav-link"%>
+              <span class="text-primary d-flex align-items-center border rounded fw-bold me-2">
+                <%= link_to "See Books", seeBooks_path, class:"nav-link"%>
+              </span>
+              <span class="text-primary d-flex align-items-center border rounded fw-bold ps-2 pe-2">
+                <%= Current.user.email%>
               </span>
               <%= button_to "Logout", logout_path, method: :delete, class:"btn btn-outline-secondary ms-2"%>
           <% else %>

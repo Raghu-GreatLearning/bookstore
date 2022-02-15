@@ -13,5 +13,10 @@ Rails.application.routes.draw do
 
   post "signIn", to: "sessions#create"
 
+  get "seeBooks", to: "bookspage#index"
+
+  get "addBook", to: "bookspage#new"
+  post "addBook", to: "bookspage#create"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
