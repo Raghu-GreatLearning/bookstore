@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Homes", type: :feature do
-  context 'without sign in' do
+  context 'without sign up' do
     scenario 'visit home page' do
       visit(root_path)
       expect(find('h1')).to have_content('Sign In / Sign Up as Admin')
