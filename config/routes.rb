@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   get "addBook", to: "bookspage#new"
   post "addBook", to: "bookspage#create"
 
+  get "issueBook", to: "bookissue#new"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

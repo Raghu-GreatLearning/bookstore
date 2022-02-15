@@ -5,6 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :author
       t.integer :published_in
       t.integer :volume
+      t.boolean :issued, null: false, :default => 0
 
       t.timestamps
     end

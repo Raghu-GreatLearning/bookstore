@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Homes", :type => :feature do
+RSpec.feature "Homes", type: :feature do
   context 'without sign in' do
     scenario 'visit home page' do
       visit(root_path)
@@ -28,9 +28,9 @@ RSpec.feature "Homes", :type => :feature do
     end
 
     it 'does sign up successfully' do
-      fill_in 'Password confirmation', with: user.confirm_password
+      fill_in 'Confirm password', with: user.confirm_password
       click_button 'Sign Up'
-      expect(page).to have_content("Password")
+      expect(page).to have_content("Successfully created account")
     end
   end
 end

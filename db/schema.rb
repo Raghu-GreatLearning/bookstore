@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_02_15_062336) do
     t.string "author"
     t.integer "published_in"
     t.integer "volume"
+    t.boolean "issued", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

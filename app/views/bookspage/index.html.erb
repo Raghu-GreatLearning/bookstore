@@ -23,7 +23,7 @@
           <%= book.published_in%></span>
         </div>
         <div class="ms-auto">
-          <div class="btn btn-warning">Issue Book</div>
+          <div class="btn btn-warning"><%= link_to "Issue Book", issueBook_path(id: book.id)%></div>
           <div class="btn btn-success">Show Details</div>
         </div>
     </li>
