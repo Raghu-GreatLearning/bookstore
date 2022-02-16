@@ -3,6 +3,23 @@ require 'rails_helper'
 RSpec.feature "See books", type: :feature do
   context 'features test for books page' do
     let(:book) { build(:book) }
+    let(:admin) { build(:user) }
+
+
+    before(:each) do
+      visit(signUp_path)
+      expect(current_path).to eq(signUp_path)
+      fill_in "Email", with: admin.email
+      fill_in "Password", with: admin.password
+      fill_in "Confirm password", with: admin.confirm_password
+      click_button("Sign Up")
+    end
+
+    it 'check sign Up' do
+      visit(signUp_path)
+      expect(current_path).to eq(signUp_path)
+    end
+
     it 'visit books page and find add book link' do
       visit(seeBooks_path)
       expect(page).to have_link('Add new Book')

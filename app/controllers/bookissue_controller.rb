@@ -1,4 +1,5 @@
 class BookissueController < ApplicationController
+  before_action :require_user_logged_in!
   def new
     @book = Book.find(params[:id])
     @student = Student.new
@@ -28,12 +29,14 @@ class BookissueController < ApplicationController
   end
 
   def return
+    puts "some data from return"
     @book = Book.find(params[:id])
-    @book[:issued] = false
-
+    @book[:issued] =false
     @student = Student.find_by(name: @book[:issuedTo])
+    @book[:issuedTo] = "return"
     @student.destroy
     @book.save
+
     redirect_to seeBooks_path, notice: "Book Returned"
   end
 

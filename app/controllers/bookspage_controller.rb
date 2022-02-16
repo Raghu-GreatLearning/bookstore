@@ -1,4 +1,5 @@
 class BookspageController < ApplicationController
+  before_action :require_user_logged_in!
   def index
     @books = Book.all
   end
