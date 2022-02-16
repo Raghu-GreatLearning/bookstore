@@ -3,4 +3,8 @@ class BookissueController < ApplicationController
     @book = Book.find(params[:id])
     @book2 = Book.new
   end
+  
+  def show
+    @book = Book.find(params[:id])
+  end
 end

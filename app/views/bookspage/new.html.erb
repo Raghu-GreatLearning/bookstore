@@ -1,8 +1,7 @@
 <h1 class="text-muted d-flex justify-content-center">Add Book Details</h1>
 
 <%= form_with model: @book, url: addBook_path do |form| %>
-  
-  <% if form.object.errors.any? %>
+  <% if @book.errors.any? %>
     <div class="alert alert-danger">
       <% @book.errors.full_messages.each do |message| %>
         <div><%= message%></div>

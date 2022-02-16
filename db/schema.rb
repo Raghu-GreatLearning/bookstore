@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_062336) do
+ActiveRecord::Schema.define(version: 2022_02_16_083640) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2022_02_15_062336) do
     t.integer "published_in"
     t.integer "volume"
     t.boolean "issued", default: false, null: false
+    t.string "issuedTo", default: "student", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "bookIssued"
+    t.date "issuedDate"
+    t.date "returnDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

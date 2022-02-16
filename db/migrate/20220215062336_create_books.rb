@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.integer :published_in
       t.integer :volume
       t.boolean :issued, null: false, :default => 0
-
+      t.string :issuedTo, null: false, :default => "student"
       t.timestamps
     end
   end

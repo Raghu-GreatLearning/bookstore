@@ -23,8 +23,12 @@
           <%= book.published_in%></span>
         </div>
         <div class="ms-auto">
-          <div class="btn btn-warning"><%= link_to "Issue Book", issueBook_path(id: book.id)%></div>
-          <div class="btn btn-success">Show Details</div>
+          <% if book[:issued] %>
+            <div class="btn btn-danger">issued</div>
+          <%else%>
+            <div class="btn btn-warning"><%= link_to "Issue Book", issueBook_path(id: book[:id])%></div>
+          <%end%>
+          <div class="btn btn-outline-info"><%= link_to "Show Details", showBook_path(id: book[:id])%></div>
         </div>
     </li>
   <% end %>
