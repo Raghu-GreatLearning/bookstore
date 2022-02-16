@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2022_02_16_083640) do
     t.integer "volume"
     t.boolean "issued", default: false, null: false
     t.string "issuedTo", default: "student", null: false
+    t.string "issuedDate"
+    t.string "returnDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

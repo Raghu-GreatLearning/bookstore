@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   get "issueBook", to: "bookissue#new"
   get "showBook", to: "bookissue#show"
+  post "issueBook", to: "bookissue#create"
+
+  get "returnBook", to: "bookissue#return"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

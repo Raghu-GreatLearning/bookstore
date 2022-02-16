@@ -32,4 +32,17 @@
       <%= @book[:issuedTo]%> 
     <%end%><span>
   </div>
+
+  <div>
+    <%if @book[:issued]%>
+      <div>
+        Issue Date : <%= @book[:issuedDate]%>
+      </div>
+      <div>
+        Return Date : <%= @book[:returnDate]%>
+      </div>
+    <%end%>
+  </div>
 </div>
+
+<div class="btn btn-outline-primary"><%= link_to "Recieve Book"%></div>
