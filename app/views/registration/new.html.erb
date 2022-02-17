@@ -1,6 +1,6 @@
 <h1 class="text-muted d-flex justify-content-center">Sign Up</h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
+<%= form_with model: @user, url: sign_up_path, local: :true do |form| %>
   
   <% if form.object.errors.any? %>
     <div class="alert alert-danger">

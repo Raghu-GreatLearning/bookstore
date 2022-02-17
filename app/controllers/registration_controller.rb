@@ -13,7 +13,7 @@ class RegistrationController < ApplicationController
       session[:user_id] = @user.id
       redirect_to see_books_path, notice: "Successfully created account"
     else
-      flash[:alert] = "Something went worng"
+      # flash[:alert] = "Something went worng"
       render :new, status: :unprocessable_entity
     end
   end
