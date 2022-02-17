@@ -52,7 +52,6 @@ RSpec.describe Book, type: :model do
       expect(Book.check_issue_status(student)).to eq(true)
       Book.book_returned(@book)
       expect(Book.check_issue_status(student)).to eq(false)
-
     end
   end
 end
