@@ -19,7 +19,9 @@ class BookissueController < ApplicationController
       redirect_to seeBooks_path, notice: "Book Issued"
     else
       # flash[:alert] = "Something went worng" 
-      @errors = @student.errors.full_messages
+      # puts @student.errors.full_messages
+      # @errors = @student.errors.full_messages
+
       # render :new, status: :unprocessable_entity
       redirect_to seeBooks_path, alert: "Students details are not available"
     end

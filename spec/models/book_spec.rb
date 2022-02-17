@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
+  let(:book) {build(:book)}
+
   describe 'vaidating book data' do
-    let(:book) {build(:book)}
 
     it 'validates book title' do
       book.title = nil
@@ -22,6 +23,36 @@ RSpec.describe Book, type: :model do
     it 'validates book volume number is present' do
       book.volume = nil
       expect(book.save).to eq(false)
+    end
+
+    it "vaidate that book is not issued" do
+      student = Student.create({name: "raghu", email: "raghu@gmail.com", bookIssued: "harry potter", issuedDate:"2022-02-17", returnDate:"2022-02-19"})
+      @book = Book.create({title: "harry potter", author: "jk", volume: 1, published_in: 2005})
+    
+      expect(Book.checkIssueStatus(student)).to eq(false)
+    end
+
+    it "vaidate if book is issued can't issue it again" do
+      student = Student.create({name: "raghu", email: "raghu@gmail.com", bookIssued: "harry potter", issuedDate:"2022-02-17", returnDate:"2022-02-19"})
+      @book = Book.create({title: "harry potter", author: "jk", volume: 1, published_in: 2005, issued: true})
+      expect(Book.checkIssueStatus(student)).to eq(true)
+    end
+
+    it "update book status after issuing it" do
+      student = Student.create({name: "raghu", email: "raghu@gmail.com", bookIssued: "harry potter", issuedDate:"2022-02-17", returnDate:"2022-02-19"})
+      Book.create({title: "harry potter", author: "jk", volume: 1, published_in: 2005})
+      Book.updateBook(student)
+      expect(Book.checkIssueStatus(student)).to eq(true)
+    end
+
+    it "Check book is returned after book is returned" do
+      student = Student.create({name: "raghu", email: "raghu@gmail.com", bookIssued: "harry potter", issuedDate:"2022-02-17", returnDate:"2022-02-19"})
+      @book = Book.create({title: "harry potter", author: "jk", volume: 1, published_in: 2005})
+      Book.updateBook(student)
+      expect(Book.checkIssueStatus(student)).to eq(true)
+      Book.bookReturned(@book)
+      expect(Book.checkIssueStatus(student)).to eq(false)
+
     end
   end
 end
