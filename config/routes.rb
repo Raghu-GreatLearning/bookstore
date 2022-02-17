@@ -3,26 +3,26 @@ Rails.application.routes.draw do
 
   get 'see', to: "registration#index"
 
-  get "signUp", to:"registration#new"
+  get "sign_up", to:"registration#new"
 
-  post "signUp", to: "registration#create"
+  post "sign_up", to: "registration#create"
 
   delete "logout", to: "sessions#destroy"
 
-  get "signIn", to:"sessions#new"
+  get "sign_in", to:"sessions#new"
 
-  post "signIn", to: "sessions#create"
+  post "sign_in", to: "sessions#create"
 
-  get "seeBooks", to: "bookspage#index"
+  get "see_books", to: "books_page#index"
 
-  get "addBook", to: "bookspage#new"
-  post "addBook", to: "bookspage#create"
+  get "add_book", to: "books_page#new"
+  post "add_book", to: "books_page#create"
 
-  get "issueBook", to: "bookissue#new"
-  get "showBook", to: "bookissue#show"
-  post "issueBook", to: "bookissue#create"
+  get "issue_book", to: "book_issue#new"
+  get "show_book", to: "book_issue#show"
+  post "issue_book", to: "book_issue#create"
 
-  get "returnBook", to: "bookissue#return"
+  get "return_book", to: "book_issue#return"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

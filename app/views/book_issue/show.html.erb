@@ -46,5 +46,5 @@
 </div>
 
 <% if @book[:issued]%>
-  <div class="btn btn-outline-info"><%= link_to "Recieve Book", returnBook_path(id: @book[:id]), class:"nav-link" %></div>
+  <div class="btn btn-outline-info"><%= link_to "Recieve Book", return_book_path(id: @book[:id]), class:"nav-link" %></div>
 <%end%>

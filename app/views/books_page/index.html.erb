@@ -1,4 +1,4 @@
-<h1>This is page after sigup/signIn</h1>
+<h1>This is page after sigup/sign_in</h1>
 
 <div class="mt-4">
   <h3>Available books</h3>
@@ -26,12 +26,12 @@
           <% if book[:issued] %>
             <div class="btn btn-danger">issued</div>
           <%else%>
-            <div class="btn btn-warning"><%= link_to "Issue Book", issueBook_path(id: book[:id]), class:"nav-link"%></div>
+            <div class="btn btn-warning"><%= link_to "Issue Book", issue_book_path(id: book[:id]), class:"nav-link"%></div>
           <%end%>
-          <div class="btn btn-outline-info"><%= link_to "Show Details", showBook_path(id: book[:id]), class:"nav-link"%></div>
+          <div class="btn btn-outline-info"><%= link_to "Show Details", show_book_path(id: book[:id]), class:"nav-link"%></div>
         </div>
     </li>
   <% end %>
 </div>
 
-<%= link_to "Add new Book", addBook_path, class:"nav-link"%>
+<%= link_to "Add new Book", add_book_path, class:"nav-link"%>

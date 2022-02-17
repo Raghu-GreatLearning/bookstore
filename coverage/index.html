@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-17T14:32:48+05:30">2022-02-17T14:32:48+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-17T14:55:43+05:30">2022-02-17T14:55:43+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -93,7 +93,7 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#1a81cbaab1ad253c12d81844bdf53e5398cf2f60" class="src_link" title="app/controllers/bookissue_controller.rb">app/controllers/bookissue_controller.rb</a></td>
+            <td class="strong t-file__name"><a href="#d061318943b3b578eeda7ce197540dc6d35bf7fa" class="src_link" title="app/controllers/book_issue_controller.rb">app/controllers/book_issue_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">52.38 %</td>
             <td class="cell--number">40</td>
             <td class="cell--number">21</td>
@@ -104,7 +104,7 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#eec8151fbe3740561e23b632d698850263b78ab5" class="src_link" title="app/controllers/bookspage_controller.rb">app/controllers/bookspage_controller.rb</a></td>
+            <td class="strong t-file__name"><a href="#f0c7baf74ebeed2e40484ad782d390e4a065911a" class="src_link" title="app/controllers/books_page_controller.rb">app/controllers/books_page_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">29</td>
             <td class="cell--number">15</td>
@@ -423,7 +423,7 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#6975d31554f9b49e5aa37eae7a03fe724d908bed" class="src_link" title="spec/features/bookspage_spec.rb">spec/features/bookspage_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#b389cacdea565ba7a2018fa37bcd6d6d868a2ad9" class="src_link" title="spec/features/books_page_spec.rb">spec/features/books_page_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">82</td>
             <td class="cell--number">57</td>
@@ -855,7 +855,7 @@
 
             
 
-            <code class="ruby">    redirect_to signIn_path, alert: &quot;You Must login first to do that&quot; if Current.user.nil?</code>
+            <code class="ruby">    redirect_to sign_in_path, alert: &quot;You Must login first to do that&quot; if Current.user.nil?</code>
           </li>
         </div>
       
@@ -886,9 +886,9 @@
 </div>
 
       
-        <div class="source_table" id="1a81cbaab1ad253c12d81844bdf53e5398cf2f60">
+        <div class="source_table" id="d061318943b3b578eeda7ce197540dc6d35bf7fa">
   <div class="header">
-    <h3>app/controllers/bookissue_controller.rb</h3>
+    <h3>app/controllers/book_issue_controller.rb</h3>
     <h4>
       <span class="red">
   52.38%
@@ -919,7 +919,7 @@
 
             
 
-            <code class="ruby">class BookissueController &lt; ApplicationController</code>
+            <code class="ruby">class BookIssueController &lt; ApplicationController</code>
           </li>
         </div>
       
@@ -1073,7 +1073,7 @@
 
             
 
-            <code class="ruby">    if Book.checkIssueStatus(@student)</code>
+            <code class="ruby">    if Book.check_issue_status(@student)</code>
           </li>
         </div>
       
@@ -1084,7 +1084,7 @@
 
             
 
-            <code class="ruby">      redirect_to seeBooks_path, alert: &quot;Book Already issued&quot;</code>
+            <code class="ruby">      redirect_to see_books_path, alert: &quot;Book Already issued&quot;</code>
           </li>
         </div>
       
@@ -1106,7 +1106,7 @@
 
             
 
-            <code class="ruby">      Book.updateBook(@student)</code>
+            <code class="ruby">      Book.update_book(@student)</code>
           </li>
         </div>
       
@@ -1117,7 +1117,7 @@
 
             
 
-            <code class="ruby">      redirect_to seeBooks_path, notice: &quot;Book Issued&quot;</code>
+            <code class="ruby">      redirect_to see_books_path, notice: &quot;Book Issued&quot;</code>
           </li>
         </div>
       
@@ -1194,7 +1194,7 @@
 
             
 
-            <code class="ruby">      redirect_to seeBooks_path, alert: &quot;Students details are not available&quot;</code>
+            <code class="ruby">      redirect_to see_books_path, alert: &quot;Students details are not available&quot;</code>
           </li>
         </div>
       
@@ -1249,7 +1249,7 @@
 
             
 
-            <code class="ruby">    Book.bookReturned(params)</code>
+            <code class="ruby">    Book.book_returned(params)</code>
           </li>
         </div>
       
@@ -1260,7 +1260,7 @@
 
             
 
-            <code class="ruby">    redirect_to seeBooks_path, notice: &quot;Book Returned&quot;</code>
+            <code class="ruby">    redirect_to see_books_path, notice: &quot;Book Returned&quot;</code>
           </li>
         </div>
       
@@ -1357,9 +1357,9 @@
 </div>
 
       
-        <div class="source_table" id="eec8151fbe3740561e23b632d698850263b78ab5">
+        <div class="source_table" id="f0c7baf74ebeed2e40484ad782d390e4a065911a">
   <div class="header">
-    <h3>app/controllers/bookspage_controller.rb</h3>
+    <h3>app/controllers/books_page_controller.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -1390,7 +1390,7 @@
 
             
 
-            <code class="ruby">class BookspageController &lt; ApplicationController</code>
+            <code class="ruby">class BooksPageController &lt; ApplicationController</code>
           </li>
         </div>
       
@@ -1544,7 +1544,7 @@
 
             
 
-            <code class="ruby">      redirect_to seeBooks_path, notice: &quot;Successfully Added book to database&quot;</code>
+            <code class="ruby">      redirect_to see_books_path, notice: &quot;Successfully Added book to database&quot;</code>
           </li>
         </div>
       
@@ -1883,7 +1883,7 @@
 
             
 
-            <code class="ruby">      redirect_to seeBooks_path, notice: &quot;Successfully created account&quot;</code>
+            <code class="ruby">      redirect_to see_books_path, notice: &quot;Successfully created account&quot;</code>
           </li>
         </div>
       
@@ -2211,7 +2211,7 @@
 
             
 
-            <code class="ruby">      redirect_to seeBooks_path, notice: &quot;Logged In Successfully&quot;</code>
+            <code class="ruby">      redirect_to see_books_path, notice: &quot;Logged In Successfully&quot;</code>
           </li>
         </div>
       
@@ -2683,7 +2683,7 @@
 
             
 
-            <code class="ruby">  def self.checkIssueStatus(student)</code>
+            <code class="ruby">  def self.check_issue_status(student)</code>
           </li>
         </div>
       
@@ -2738,7 +2738,7 @@
 
             
 
-            <code class="ruby">  def self.updateBook(student)</code>
+            <code class="ruby">  def self.update_book(student)</code>
           </li>
         </div>
       
@@ -2837,7 +2837,7 @@
 
             
 
-            <code class="ruby">  def self.bookReturned(params)</code>
+            <code class="ruby">  def self.book_returned(params)</code>
           </li>
         </div>
       
@@ -5520,7 +5520,7 @@
 
             
 
-            <code class="ruby">  get &quot;signUp&quot;, to:&quot;registration#new&quot;</code>
+            <code class="ruby">  get &quot;sign_up&quot;, to:&quot;registration#new&quot;</code>
           </li>
         </div>
       
@@ -5542,7 +5542,7 @@
 
             
 
-            <code class="ruby">  post &quot;signUp&quot;, to: &quot;registration#create&quot;</code>
+            <code class="ruby">  post &quot;sign_up&quot;, to: &quot;registration#create&quot;</code>
           </li>
         </div>
       
@@ -5586,7 +5586,7 @@
 
             
 
-            <code class="ruby">  get &quot;signIn&quot;, to:&quot;sessions#new&quot;</code>
+            <code class="ruby">  get &quot;sign_in&quot;, to:&quot;sessions#new&quot;</code>
           </li>
         </div>
       
@@ -5608,7 +5608,7 @@
 
             
 
-            <code class="ruby">  post &quot;signIn&quot;, to: &quot;sessions#create&quot;</code>
+            <code class="ruby">  post &quot;sign_in&quot;, to: &quot;sessions#create&quot;</code>
           </li>
         </div>
       
@@ -5630,7 +5630,7 @@
 
             
 
-            <code class="ruby">  get &quot;seeBooks&quot;, to: &quot;bookspage#index&quot;</code>
+            <code class="ruby">  get &quot;see_books&quot;, to: &quot;books_page#index&quot;</code>
           </li>
         </div>
       
@@ -5652,7 +5652,7 @@
 
             
 
-            <code class="ruby">  get &quot;addBook&quot;, to: &quot;bookspage#new&quot;</code>
+            <code class="ruby">  get &quot;add_book&quot;, to: &quot;books_page#new&quot;</code>
           </li>
         </div>
       
@@ -5663,7 +5663,7 @@
 
             
 
-            <code class="ruby">  post &quot;addBook&quot;, to: &quot;bookspage#create&quot;</code>
+            <code class="ruby">  post &quot;add_book&quot;, to: &quot;books_page#create&quot;</code>
           </li>
         </div>
       
@@ -5685,7 +5685,7 @@
 
             
 
-            <code class="ruby">  get &quot;issueBook&quot;, to: &quot;bookissue#new&quot;</code>
+            <code class="ruby">  get &quot;issue_book&quot;, to: &quot;book_issue#new&quot;</code>
           </li>
         </div>
       
@@ -5696,7 +5696,7 @@
 
             
 
-            <code class="ruby">  get &quot;showBook&quot;, to: &quot;bookissue#show&quot;</code>
+            <code class="ruby">  get &quot;show_book&quot;, to: &quot;book_issue#show&quot;</code>
           </li>
         </div>
       
@@ -5707,7 +5707,7 @@
 
             
 
-            <code class="ruby">  post &quot;issueBook&quot;, to: &quot;bookissue#create&quot;</code>
+            <code class="ruby">  post &quot;issue_book&quot;, to: &quot;book_issue#create&quot;</code>
           </li>
         </div>
       
@@ -5729,7 +5729,7 @@
 
             
 
-            <code class="ruby">  get &quot;returnBook&quot;, to: &quot;bookissue#return&quot;</code>
+            <code class="ruby">  get &quot;return_book&quot;, to: &quot;book_issue#return&quot;</code>
           </li>
         </div>
       
@@ -6128,9 +6128,9 @@
 </div>
 
       
-        <div class="source_table" id="6975d31554f9b49e5aa37eae7a03fe724d908bed">
+        <div class="source_table" id="b389cacdea565ba7a2018fa37bcd6d6d868a2ad9">
   <div class="header">
-    <h3>spec/features/bookspage_spec.rb</h3>
+    <h3>spec/features/books_page_spec.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -6260,7 +6260,7 @@
 
             
 
-            <code class="ruby">      visit(signUp_path)</code>
+            <code class="ruby">      visit(sign_up_path)</code>
           </li>
         </div>
       
@@ -6271,7 +6271,7 @@
 
             
 
-            <code class="ruby">      expect(current_path).to eq(signUp_path)</code>
+            <code class="ruby">      expect(current_path).to eq(sign_up_path)</code>
           </li>
         </div>
       
@@ -6359,7 +6359,7 @@
 
             
 
-            <code class="ruby">      visit(signUp_path)</code>
+            <code class="ruby">      visit(sign_up_path)</code>
           </li>
         </div>
       
@@ -6370,7 +6370,7 @@
 
             
 
-            <code class="ruby">      expect(current_path).to eq(signUp_path)</code>
+            <code class="ruby">      expect(current_path).to eq(sign_up_path)</code>
           </li>
         </div>
       
@@ -6414,7 +6414,7 @@
 
             
 
-            <code class="ruby">      visit(seeBooks_path)</code>
+            <code class="ruby">      visit(see_books_path)</code>
           </li>
         </div>
       
@@ -6447,7 +6447,7 @@
 
             
 
-            <code class="ruby">      expect(current_path).to eq(addBook_path)</code>
+            <code class="ruby">      expect(current_path).to eq(add_book_path)</code>
           </li>
         </div>
       
@@ -6491,7 +6491,7 @@
 
             
 
-            <code class="ruby">      visit(seeBooks_path)</code>
+            <code class="ruby">      visit(see_books_path)</code>
           </li>
         </div>
       
@@ -6513,7 +6513,7 @@
 
             
 
-            <code class="ruby">      expect(current_path).to eq(addBook_path)</code>
+            <code class="ruby">      expect(current_path).to eq(add_book_path)</code>
           </li>
         </div>
       
@@ -6557,7 +6557,7 @@
 
             
 
-            <code class="ruby">      visit(addBook_path)</code>
+            <code class="ruby">      visit(add_book_path)</code>
           </li>
         </div>
       
@@ -6678,7 +6678,7 @@
 
             
 
-            <code class="ruby">      visit(addBook_path)</code>
+            <code class="ruby">      visit(add_book_path)</code>
           </li>
         </div>
       
@@ -6788,7 +6788,7 @@
 
             
 
-            <code class="ruby">      visit(addBook_path)</code>
+            <code class="ruby">      visit(add_book_path)</code>
           </li>
         </div>
       
@@ -6920,7 +6920,7 @@
 
             
 
-            <code class="ruby">      visit(addBook_path)</code>
+            <code class="ruby">      visit(add_book_path)</code>
           </li>
         </div>
       
@@ -7248,7 +7248,7 @@
 
             
 
-            <code class="ruby">      visit signUp_path</code>
+            <code class="ruby">      visit sign_up_path</code>
           </li>
         </div>
       
@@ -7358,7 +7358,7 @@
 
             
 
-            <code class="ruby">    it&#39;confirm SignUp Path&#39; do</code>
+            <code class="ruby">    it&#39;confirm sign_up Path&#39; do</code>
           </li>
         </div>
       
@@ -7380,7 +7380,7 @@
 
             
 
-            <code class="ruby">      expect(current_path).to eq(signUp_path)</code>
+            <code class="ruby">      expect(current_path).to eq(sign_up_path)</code>
           </li>
         </div>
       
@@ -7807,7 +7807,7 @@
 
             
 
-            <code class="ruby">      visit signIn_path</code>
+            <code class="ruby">      visit sign_in_path</code>
           </li>
         </div>
       
@@ -7906,7 +7906,7 @@
 
             
 
-            <code class="ruby">    it&#39;confirm SignUp Path&#39; do</code>
+            <code class="ruby">    it&#39;confirm sign_up Path&#39; do</code>
           </li>
         </div>
       
@@ -7928,7 +7928,7 @@
 
             
 
-            <code class="ruby">      expect(current_path).to eq(signIn_path)</code>
+            <code class="ruby">      expect(current_path).to eq(sign_in_path)</code>
           </li>
         </div>
       
@@ -8943,7 +8943,7 @@
 
             
 
-            <code class="ruby">      expect(Book.checkIssueStatus(student)).to eq(false)</code>
+            <code class="ruby">      expect(Book.check_issue_status(student)).to eq(false)</code>
           </li>
         </div>
       
@@ -9009,7 +9009,7 @@
 
             
 
-            <code class="ruby">      expect(Book.checkIssueStatus(student)).to eq(true)</code>
+            <code class="ruby">      expect(Book.check_issue_status(student)).to eq(true)</code>
           </li>
         </div>
       
@@ -9075,7 +9075,7 @@
 
             
 
-            <code class="ruby">      Book.updateBook(student)</code>
+            <code class="ruby">      Book.update_book(student)</code>
           </li>
         </div>
       
@@ -9086,7 +9086,7 @@
 
             
 
-            <code class="ruby">      expect(Book.checkIssueStatus(student)).to eq(true)</code>
+            <code class="ruby">      expect(Book.check_issue_status(student)).to eq(true)</code>
           </li>
         </div>
       
@@ -9152,7 +9152,7 @@
 
             
 
-            <code class="ruby">      Book.updateBook(student)</code>
+            <code class="ruby">      Book.update_book(student)</code>
           </li>
         </div>
       
@@ -9163,7 +9163,7 @@
 
             
 
-            <code class="ruby">      expect(Book.checkIssueStatus(student)).to eq(true)</code>
+            <code class="ruby">      expect(Book.check_issue_status(student)).to eq(true)</code>
           </li>
         </div>
       
@@ -9174,7 +9174,7 @@
 
             
 
-            <code class="ruby">      Book.bookReturned(@book)</code>
+            <code class="ruby">      Book.book_returned(@book)</code>
           </li>
         </div>
       
@@ -9185,7 +9185,7 @@
 
             
 
-            <code class="ruby">      expect(Book.checkIssueStatus(student)).to eq(false)</code>
+            <code class="ruby">      expect(Book.check_issue_status(student)).to eq(false)</code>
           </li>
         </div>
       
@@ -10979,7 +10979,7 @@
 
             
 
-            <code class="ruby">      get addBook_path</code>
+            <code class="ruby">      get add_book_path</code>
           </li>
         </div>
       
@@ -11001,7 +11001,7 @@
 
             
 
-            <code class="ruby">      expect(response).to redirect_to(signIn_path)</code>
+            <code class="ruby">      expect(response).to redirect_to(sign_in_path)</code>
           </li>
         </div>
       
@@ -11056,7 +11056,7 @@
 
             
 
-            <code class="ruby">      post addBook_path, :params =&gt; {:book =&gt; { :title =&gt; book.title, :author =&gt; book.author, :volume =&gt; book.volume, :published_in =&gt; book.published_in}}</code>
+            <code class="ruby">      post add_book_path, :params =&gt; {:book =&gt; { :title =&gt; book.title, :author =&gt; book.author, :volume =&gt; book.volume, :published_in =&gt; book.published_in}}</code>
           </li>
         </div>
       
@@ -11067,7 +11067,7 @@
 
             
 
-            <code class="ruby">      # expect(response).to redirect_to(seeBooks_path)</code>
+            <code class="ruby">      # expect(response).to redirect_to(see_books_path)</code>
           </li>
         </div>
       
@@ -11078,7 +11078,7 @@
 
             
 
-            <code class="ruby">      expect(response).to redirect_to(signIn_path)</code>
+            <code class="ruby">      expect(response).to redirect_to(sign_in_path)</code>
           </li>
         </div>
       
@@ -11230,7 +11230,7 @@
 
             
 
-            <code class="ruby">    it &quot;returns http success for get signUp path&quot; do</code>
+            <code class="ruby">    it &quot;returns http success for get sign_up path&quot; do</code>
           </li>
         </div>
       
@@ -11241,7 +11241,7 @@
 
             
 
-            <code class="ruby">      get signUp_path</code>
+            <code class="ruby">      get sign_up_path</code>
           </li>
         </div>
       
@@ -11393,7 +11393,7 @@
 
             
 
-            <code class="ruby">      get signIn_path</code>
+            <code class="ruby">      get sign_in_path</code>
           </li>
         </div>
       
@@ -11448,7 +11448,7 @@
 
             
 
-            <code class="ruby">      post signIn_path</code>
+            <code class="ruby">      post sign_in_path</code>
           </li>
         </div>
       

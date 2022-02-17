@@ -5,12 +5,12 @@ class Book < ApplicationRecord
   validates :volume, presence: true
 
 
-  def self.checkIssueStatus(student)
+  def self.check_issue_status(student)
     @book = Book.find_by(title: student[:bookIssued])
     @book[:issued]
   end
 
-  def self.updateBook(student)
+  def self.update_book(student)
     @book = Book.find_by(title: student[:bookIssued])
     @book[:issued] = true
     @book[:issuedTo] = student[:name]
@@ -19,7 +19,7 @@ class Book < ApplicationRecord
     @book.save
   end
 
-  def self.bookReturned(params)
+  def self.book_returned(params)
     @book = Book.find(params[:id])
     @book[:issued] =false
     @student = Student.find_by(name: @book[:issuedTo])

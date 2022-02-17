@@ -24,7 +24,7 @@ RSpec.feature "sigIn", type: :feature do
     let(:user) { build(:user) }
 
     before :each do
-      visit signIn_path
+      visit sign_in_path
       fill_in 'Email', with: user.email
     end
 
@@ -33,9 +33,9 @@ RSpec.feature "sigIn", type: :feature do
       expect(page).to have_content('Invalid email or password')
     end
 
-    it'confirm SignUp Path' do
+    it'confirm sign_up Path' do
       click_button 'Sign In'
-      expect(current_path).to eq(signIn_path)
+      expect(current_path).to eq(sign_in_path)
     end
 
   end

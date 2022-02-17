@@ -7,8 +7,8 @@ RSpec.feature "See books", type: :feature do
 
 
     before(:each) do
-      visit(signUp_path)
-      expect(current_path).to eq(signUp_path)
+      visit(sign_up_path)
+      expect(current_path).to eq(sign_up_path)
       fill_in "Email", with: admin.email
       fill_in "Password", with: admin.password
       fill_in "Confirm password", with: admin.confirm_password
@@ -16,25 +16,25 @@ RSpec.feature "See books", type: :feature do
     end
 
     it 'check sign Up' do
-      visit(signUp_path)
-      expect(current_path).to eq(signUp_path)
+      visit(sign_up_path)
+      expect(current_path).to eq(sign_up_path)
     end
 
     it 'visit books page and find add book link' do
-      visit(seeBooks_path)
+      visit(see_books_path)
       expect(page).to have_link('Add new Book')
       click_link('Add new Book')
-      expect(current_path).to eq(addBook_path)
+      expect(current_path).to eq(add_book_path)
     end
 
     it 'Go to add book page' do
-      visit(seeBooks_path)
+      visit(see_books_path)
       click_link('Add new Book')
-      expect(current_path).to eq(addBook_path)
+      expect(current_path).to eq(add_book_path)
     end
 
     it 'Go to add book page and add a book' do
-      visit(addBook_path)
+      visit(add_book_path)
       fill_in "Title", with: book.title
       fill_in "Author", with: book.author
       fill_in "Volume", with: book.volume
@@ -45,7 +45,7 @@ RSpec.feature "See books", type: :feature do
     end
 
     it 'Error on adding a book' do
-      visit(addBook_path)
+      visit(add_book_path)
       fill_in "Title", with: book.title
       fill_in "Author", with: book.author
       fill_in "Volume", with: book.volume
@@ -55,7 +55,7 @@ RSpec.feature "See books", type: :feature do
     end
 
     it 'After adding a book Try to issue that book' do
-      visit(addBook_path)
+      visit(add_book_path)
       fill_in "Title", with: book.title
       fill_in "Author", with: book.author
       fill_in "Volume", with: book.volume
@@ -67,7 +67,7 @@ RSpec.feature "See books", type: :feature do
     end
 
     it 'After adding a book Try to show details of that book' do
-      visit(addBook_path)
+      visit(add_book_path)
       fill_in "Title", with: book.title
       fill_in "Author", with: book.author
       fill_in "Volume", with: book.volume

@@ -3,8 +3,8 @@
 
 <div class="d-flex gap-4">
   <% if !Current.user%>
-    <%= button_to "Sign In", signIn_path, method: :get%>
-    <%= button_to "Sign Up", signUp_path, method: :get%>
+    <%= button_to "Sign In", sign_in_path, method: :get%>
+    <%= button_to "Sign Up", sign_up_path, method: :get%>
   <%end%>
 </div>
 
@@ -34,10 +34,10 @@
             <% if book[:issued] %>
               <div class="btn btn-danger">issued</div>
             <%else%>
-              <div class="btn btn-warning"><%= link_to "Issue Book", issueBook_path(id: book[:id])%></div>
+              <div class="btn btn-warning"><%= link_to "Issue Book", issue_book_path(id: book[:id])%></div>
             <%end%>
 
-            <div class="btn btn-outline-info"><%= link_to "Show Details", showBook_path(id: book[:id])%></div>
+            <div class="btn btn-outline-info"><%= link_to "Show Details", show_book_path(id: book[:id])%></div>
 
         </div>
         <%end%>
@@ -46,7 +46,7 @@
 </div>
 
 <%if !Current.user%>
-  <%= link_to "Add new Book", signIn_path, class:"nav-link btn"%>
+  <%= link_to "Add new Book", sign_in_path, class:"nav-link btn"%>
 <%end%>
 
 

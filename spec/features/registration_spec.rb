@@ -12,7 +12,7 @@ RSpec.feature "Homes", type: :feature do
     let(:user) { build(:user) }
 
     before :each do
-      visit signUp_path
+      visit sign_up_path
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
     end
@@ -22,9 +22,9 @@ RSpec.feature "Homes", type: :feature do
       expect(page).to have_content('Confirm password can\'t be blank')
     end
 
-    it'confirm SignUp Path' do
+    it'confirm sign_up Path' do
       click_button 'Sign Up'
-      expect(current_path).to eq(signUp_path)
+      expect(current_path).to eq(sign_up_path)
     end
 
     it 'does sign up successfully' do

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/raghu-n-yadav/Desktop/bookstore/spec/features/bookspage_spec.rb": {
+      "/home/raghu-n-yadav/Desktop/bookstore/spec/features/books_page_spec.rb": {
         "lines": [
           1,
           null,
@@ -940,7 +940,7 @@
           null
         ]
       },
-      "/home/raghu-n-yadav/Desktop/bookstore/app/controllers/bookspage_controller.rb": {
+      "/home/raghu-n-yadav/Desktop/bookstore/app/controllers/books_page_controller.rb": {
         "lines": [
           1,
           1,
@@ -973,7 +973,7 @@
           null
         ]
       },
-      "/home/raghu-n-yadav/Desktop/bookstore/app/controllers/bookissue_controller.rb": {
+      "/home/raghu-n-yadav/Desktop/bookstore/app/controllers/book_issue_controller.rb": {
         "lines": [
           1,
           1,
@@ -1054,6 +1054,6 @@
         ]
       }
     },
-    "timestamp": 1645088568
+    "timestamp": 1645089943
   }
 }
