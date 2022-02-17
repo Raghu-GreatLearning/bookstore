@@ -8,7 +8,7 @@ class BookIssueController < ApplicationController
   def show
     @book = Book.find(params[:id])
   end
-
+  
   def create
     @student = Student.new(student_params)
 

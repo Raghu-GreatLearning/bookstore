@@ -25,7 +25,7 @@
 </div>
 <h1 class="text-muted">Student Details</h1>
 
-<%= form_with model: @student, url: issue_book_path do |form| %>
+<%= form_with model: @student, url: issue_book_path, local: :true do |form| %>
   <%= @errors.inspect%>
   <% if @student.errors.any? %>
     <div class="alert alert-danger">

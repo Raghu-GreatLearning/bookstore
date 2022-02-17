@@ -14,9 +14,7 @@ class BooksPageController < ApplicationController
     if @book.save
       redirect_to see_books_path, notice: "Successfully Added book to database"
     else
-      flash[:alert] = "Fill out Book details"
-      # @errors = @book.errors.full_messages 
-      # puts @book.errors.full_messages 
+      # flash[:alert] = "Fill out Book details"
       render :new, status: :unprocessable_entity
     end
   end
