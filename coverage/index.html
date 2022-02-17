@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-17T15:23:28+05:30">2022-02-17T15:23:28+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-17T17:42:13+05:30">2022-02-17T17:42:13+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  95.79%
+  94.88%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.98
+         1.95
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>404</b> relevant lines,
-    <span class="green"><b>387</b> lines covered</span> and
-    <span class="red"><b>17</b> lines missed. </span>
+    <b>410</b> relevant lines,
+    <span class="green"><b>389</b> lines covered</span> and
+    <span class="red"><b>21</b> lines missed. </span>
     (<span class="green">
-  95.79%
+  94.88%
 </span>
 )
   </div>
@@ -94,23 +94,23 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#d061318943b3b578eeda7ce197540dc6d35bf7fa" class="src_link" title="app/controllers/book_issue_controller.rb">app/controllers/book_issue_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">52.38 %</td>
-            <td class="cell--number">40</td>
-            <td class="cell--number">21</td>
+            <td class="red strong cell--number t-file__coverage">50.00 %</td>
+            <td class="cell--number">37</td>
+            <td class="cell--number">22</td>
             <td class="cell--number">11</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">0.52</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">0.50</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#f0c7baf74ebeed2e40484ad782d390e4a065911a" class="src_link" title="app/controllers/books_page_controller.rb">app/controllers/books_page_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">27</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">3.00</td>
+            <td class="yellow strong cell--number t-file__coverage">83.33 %</td>
+            <td class="cell--number">34</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">2.39</td>
             
           </tr>
         
@@ -381,9 +381,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#f39a242c697d683debfd8a35f2e4b5ad26c266b5" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">28</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">15</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">16</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -891,7 +891,7 @@
     <h3>app/controllers/book_issue_controller.rb</h3>
     <h4>
       <span class="red">
-  52.38%
+  50.0%
 </span>
 
       lines covered
@@ -900,9 +900,9 @@
     
 
     <div class="t-line-summary">
-      <b>21</b> relevant lines.
+      <b>22</b> relevant lines.
       <span class="green"><b>11</b> lines covered</span> and
-      <span class="red"><b>10</b> lines missed.</span>
+      <span class="red"><b>11</b> lines missed.</span>
     </div>
 
     
@@ -1056,13 +1056,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="missed" data-hits="0" data-linenumber="14">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    puts params[:id]</code>
           </li>
         </div>
       
@@ -1139,7 +1139,7 @@
 
             
 
-            <code class="ruby">      # flash[:alert] = &quot;Something went worng&quot; </code>
+            <code class="ruby">      # render :new, status: :unprocessable_entity, id: params[:id]</code>
           </li>
         </div>
       
@@ -1150,18 +1150,18 @@
 
             
 
-            <code class="ruby">      # puts @student.errors.full_messages</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="missed" data-hits="0" data-linenumber="23">
             
             
 
             
 
-            <code class="ruby">      # @errors = @student.errors.full_messages</code>
+            <code class="ruby">      redirect_to issue_book_url(id: params[:id]), alert: &quot;Students details are not available&quot;</code>
           </li>
         </div>
       
@@ -1172,7 +1172,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1183,45 +1183,12 @@
 
             
 
-            <code class="ruby">      # render :new, status: :unprocessable_entity</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby">      redirect_to see_books_path, alert: &quot;Students details are not available&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="28">
-            
-            
-
-            
-
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -1232,7 +1199,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="30">
+          <li class="covered" data-hits="1" data-linenumber="27">
             <span class="hits">1</span>
             
 
@@ -1243,7 +1210,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="31">
+          <li class="missed" data-hits="0" data-linenumber="28">
             
             
 
@@ -1254,7 +1221,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="32">
+          <li class="missed" data-hits="0" data-linenumber="29">
             
             
 
@@ -1265,7 +1232,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
@@ -1276,7 +1243,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
@@ -1287,7 +1254,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
+          <li class="covered" data-hits="1" data-linenumber="32">
             <span class="hits">1</span>
             
 
@@ -1298,7 +1265,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="36">
+          <li class="never" data-hits="" data-linenumber="33">
             
             
 
@@ -1309,7 +1276,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="37">
+          <li class="covered" data-hits="1" data-linenumber="34">
             <span class="hits">1</span>
             
 
@@ -1320,7 +1287,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="38">
+          <li class="missed" data-hits="0" data-linenumber="35">
             
             
 
@@ -1331,7 +1298,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
@@ -1342,7 +1309,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="40">
+          <li class="never" data-hits="" data-linenumber="37">
             
             
 
@@ -1361,8 +1328,8 @@
   <div class="header">
     <h3>app/controllers/books_page_controller.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  83.33%
 </span>
 
       lines covered
@@ -1371,9 +1338,9 @@
     
 
     <div class="t-line-summary">
-      <b>14</b> relevant lines.
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>18</b> relevant lines.
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
 
     
@@ -1621,12 +1588,34 @@
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def destroy</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="missed" data-hits="0" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">    @book = Book.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">    @book.destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
@@ -1637,29 +1626,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="24">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="26">
+            
             
 
             
 
-            <code class="ruby">  def book_params</code>
+            <code class="ruby">    redirect_to root_path, status: :see_other</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="25">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    params.require(:book).permit(:title, :author, :published_in, :volume)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -1670,7 +1648,73 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="29">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="31">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def book_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="32">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    params.require(:book).permit(:title, :author, :published_in, :volume)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
@@ -5424,8 +5468,8 @@
     
 
     <div class="t-line-summary">
-      <b>15</b> relevant lines.
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>16</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -5646,24 +5690,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  delete &quot;delete_book&quot;, to: &quot;books_page#destroy&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  get &quot;issue_book&quot;, to: &quot;book_issue#new&quot;</code>
           </li>
         </div>
       
@@ -5674,7 +5718,7 @@
 
             
 
-            <code class="ruby">  get &quot;show_book&quot;, to: &quot;book_issue#show&quot;</code>
+            <code class="ruby">  get &quot;issue_book&quot;, to: &quot;book_issue#new&quot;</code>
           </li>
         </div>
       
@@ -5685,12 +5729,23 @@
 
             
 
+            <code class="ruby">  get &quot;show_book&quot;, to: &quot;book_issue#show&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">  post &quot;issue_book&quot;, to: &quot;book_issue#create&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
@@ -5701,7 +5756,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="25">
+          <li class="covered" data-hits="1" data-linenumber="26">
             <span class="hits">1</span>
             
 
@@ -5712,7 +5767,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -5723,7 +5778,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -5734,7 +5789,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 

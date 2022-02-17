@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get "add_book", to: "books_page#new"
   post "add_book", to: "books_page#create"
+  delete "delete_book", to: "books_page#destroy"
 
   get "issue_book", to: "book_issue#new"
   get "show_book", to: "book_issue#show"

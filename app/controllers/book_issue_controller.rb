@@ -11,19 +11,16 @@ class BookIssueController < ApplicationController
   
   def create
     @student = Student.new(student_params)
-
+    puts params[:id]
     if Book.check_issue_status(@student)
       redirect_to see_books_path, alert: "Book Already issued"
     elsif @student.save
       Book.update_book(@student)
       redirect_to see_books_path, notice: "Book Issued"
     else
-      # flash[:alert] = "Something went worng" 
-      # puts @student.errors.full_messages
-      # @errors = @student.errors.full_messages
+      # render :new, status: :unprocessable_entity, id: params[:id]
 
-      # render :new, status: :unprocessable_entity
-      redirect_to see_books_path, alert: "Students details are not available"
+      redirect_to issue_book_url(id: params[:id]), alert: "Students details are not available"
     end
   end
 

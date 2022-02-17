@@ -19,6 +19,13 @@ class BooksPageController < ApplicationController
     end
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
 
   def book_params

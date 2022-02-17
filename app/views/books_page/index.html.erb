@@ -26,9 +26,14 @@
           <% if book[:issued] %>
             <div class="btn btn-danger">issued</div>
           <%else%>
-            <div class="btn btn-warning"><%= link_to "Issue Book", issue_book_path(id: book[:id]), class:"nav-link"%></div>
+            <div class="btn btn-warning p-0"><%= link_to "Issue Book", issue_book_path(id: book[:id]), class:"nav-link"%></div>
           <%end%>
-          <div class="btn btn-outline-info"><%= link_to "Show Details", show_book_path(id: book[:id]), class:"nav-link"%></div>
+          <div class="btn btn-outline-info p-0"><%= link_to "Show Details", show_book_path(id: book[:id]), class:"nav-link"%></div>
+        </div>
+        <div>
+          <% if !book[:issued]%>
+            <%= button_to "Remove Book", delete_book_path(id: book[:id]), method: :delete, class:"btn btn-outline-secondary ms-2"%>
+          <%end%>
         </div>
     </li>
   <% end %>
