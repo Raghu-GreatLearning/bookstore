@@ -51,7 +51,7 @@ RSpec.feature "See books", type: :feature do
       fill_in "Volume", with: book.volume
 
       click_button("Add Book")
-      expect(page).to have_content('Something went worng')
+      expect(page).to have_content('Fill out Book details')
     end
 
     it 'After adding a book Try to issue that book' do
