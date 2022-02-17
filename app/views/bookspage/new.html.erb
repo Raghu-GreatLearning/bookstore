@@ -1,5 +1,4 @@
 <h1 class="text-muted d-flex justify-content-center">Add Book Details</h1>
-
 <%= form_with model: @book, url: addBook_path do |form| %>
   <% if @book.errors.any? %>
     <div class="alert alert-danger">
