@@ -28,7 +28,6 @@ RSpec.describe Book, type: :model do
     it "vaidate that book is not issued" do
       student = Student.create({name: "raghu", email: "raghu@gmail.com", bookIssued: "harry potter", issuedDate:"2022-02-17", returnDate:"2022-02-19"})
       @book = Book.create({title: "harry potter", author: "jk", volume: 1, published_in: 2005})
-    
       expect(Book.check_issue_status(student)).to eq(false)
     end
 
