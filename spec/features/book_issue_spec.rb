@@ -94,7 +94,6 @@ RSpec.feature "See books", type: :feature do
       expect(page).to have_content("Recieve Book")
       click_link("Recieve Book")
       expect(page).to have_content('Book Returned')
-
     end
   end
 end
