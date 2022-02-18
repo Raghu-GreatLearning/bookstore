@@ -32,5 +32,12 @@ RSpec.feature "Homes", type: :feature do
       click_button 'Sign Up'
       expect(page).to have_content("Successfully created account")
     end
+    it 'logout successfully' do
+      fill_in 'Confirm password', with: user.confirm_password
+      click_button 'Sign Up'
+      expect(page).to have_content("Successfully created account")
+      click_button('Logout')
+      expect(page).to have_content("Logged out")
+    end
   end
 end

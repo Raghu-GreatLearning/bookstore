@@ -78,5 +78,18 @@ RSpec.feature "See books", type: :feature do
       expect(page).to have_content(book.title)
     end
 
+    it 'After adding a book Try remove that book' do
+      visit(add_book_path)
+      fill_in "Title", with: book.title
+      fill_in "Author", with: book.author
+      fill_in "Volume", with: book.volume
+      fill_in "Published in", with: book.published_in
+
+      click_button("Add Book")
+      expect(page).to have_content(book.title)
+      click_button("Remove Book")
+      expect(page).to_not have_content(book.title)
+    end
+
   end
 end
