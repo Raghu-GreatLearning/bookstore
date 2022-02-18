@@ -37,6 +37,21 @@ RSpec.feature "sigIn", type: :feature do
       click_button 'Sign In'
       expect(current_path).to eq(sign_in_path)
     end
+    it 'sign in successfully' do
+      visit sign_up_path
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      fill_in 'Confirm password', with: user.confirm_password
+      click_button 'Sign Up'
+      expect(page).to have_content("Successfully created account")
+      click_button('Logout')
+      expect(page).to have_content("Logged out")
+      click_link("Login")
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button("Sign In")
+      expect(page).to have_content("Logged In Successfully")
+    end
 
   end
 end
