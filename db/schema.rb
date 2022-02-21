@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2022_02_16_083640) do
 
   create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.string "author"
-    t.integer "published_in"
+    t.string "title", null: false
+    t.string "author", null: false
+    t.integer "published_in", null: false
     t.integer "volume"
     t.boolean "issued", default: false, null: false
     t.string "issuedTo", default: "student", null: false
@@ -26,19 +26,19 @@ ActiveRecord::Schema.define(version: 2022_02_16_083640) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "bookIssued"
-    t.date "issuedDate"
-    t.date "returnDate"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "bookIssued", null: false
+    t.date "issuedDate", null: false
+    t.date "returnDate", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password"
-    t.string "confirm_password"
+    t.string "email", null: false
+    t.string "password", null: false
+    t.string "confirm_password", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

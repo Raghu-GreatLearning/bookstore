@@ -22,6 +22,7 @@ RSpec.feature "See books", type: :feature do
 
     it 'visit books page and find add book link' do
       visit(see_books_path)
+      expect(current_path).to eq(see_books_path)
       expect(page).to have_link('Add new Book')
       click_link('Add new Book')
       expect(current_path).to eq(add_book_path)
@@ -88,7 +89,7 @@ RSpec.feature "See books", type: :feature do
       click_button("Add Book")
       expect(page).to have_content(book.title)
       click_button("Remove Book")
-      expect(page).to_not have_content(book.title)
+      expect(page).to have_content("Book removed")
     end
 
   end

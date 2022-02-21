@@ -23,7 +23,7 @@ class BooksPageController < ApplicationController
     @book = Book.find(params[:id])
     @book.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to root_path, status: :see_other, alert: "Book removed"
   end
 
   private

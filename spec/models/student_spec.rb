@@ -1,33 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe Student, type: :model do
+
+  describe 'schema' do
+    it { should have_db_column(:email).of_type(:string) }
+    it { should have_db_column(:name).of_type(:string) }
+    it { should have_db_column(:bookIssued).of_type(:string) }
+    it { should have_db_column(:returnDate).of_type(:date) }
+    it { should have_db_column(:issuedDate).of_type(:date) }
+
+  end
+
+  describe "validations" do
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:bookIssued) }
+    it { should validate_presence_of(:returnDate) }
+    it { should validate_presence_of(:issuedDate) }
+
+  end
+
   describe "validating student data" do
     let(:student) {build(:student)}
-
-    it "check student name is present" do
-      student.name = nil
-      expect(student.save).to eq(false)
-    end
-    it "check student email is present" do
-      student.email = nil
-      expect(student.save).to eq(false)
-    end
-
-    it "check issued Book is present" do
-      student.bookIssued = nil
-      expect(student.save).to eq(false)
-    end
-
-    it "check issue date is present" do
-      student.issuedDate = nil
-      expect(student.save).to eq(false)
-    end
-
-    it "check return date is present" do
-      student.returnDate = nil
-      expect(student.save).to eq(false)
-    end
-
     it "issue the book successfully" do
       expect(student.save).to eq(true)
     end

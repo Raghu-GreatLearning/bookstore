@@ -4,7 +4,6 @@ class Book < ApplicationRecord
   validates :published_in, presence: true
   validates :volume, presence: true
 
-
   def self.check_issue_status(student)
     @book = Book.find_by(title: student[:bookIssued])
     @book[:issued]

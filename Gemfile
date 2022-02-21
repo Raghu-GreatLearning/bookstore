@@ -42,6 +42,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'capybara', '>= 2.15'
+  gem 'faker'
+  gem 'shoulda-matchers'
+  gem 'shoulda-callback-matchers'
 end
 
 group :development do
