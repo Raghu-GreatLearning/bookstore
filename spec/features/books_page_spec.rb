@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "See books", type: :feature do
-  context 'features test for books page' do
+  context 'Features test for books page' do
     let(:book) { build(:book) }
-    let(:admin) { build(:user) }
+    let(:admin) { build(:user, email: "dev@example.com") }
 
 
     before(:each) do
@@ -15,12 +15,12 @@ RSpec.feature "See books", type: :feature do
       click_button("Sign Up")
     end
 
-    it 'check sign Up' do
+    it 'Check sign Up' do
       visit(sign_up_path)
       expect(current_path).to eq(sign_up_path)
     end
 
-    it 'visit books page and find add book link' do
+    it 'Visit books page and find add book link' do
       visit(see_books_path)
       expect(current_path).to eq(see_books_path)
       expect(page).to have_link('Add new Book')

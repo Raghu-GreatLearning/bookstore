@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "See books", type: :feature do
-  context 'features test for books page' do
+  context 'Features test for books page' do
     let(:book) { build(:book) }
-    let(:admin) { build(:user) }
+    let(:admin) { build(:user, email: "dev@example.com") }
     let(:student) {build(:student)}
 
 
@@ -14,6 +14,7 @@ RSpec.feature "See books", type: :feature do
       fill_in "Password", with: admin.password
       fill_in "Confirm password", with: admin.confirm_password
       click_button("Sign Up")
+      expect(current_path).to eq(see_books_path)
     end
 
     it 'Go to add book page and add a book then issue it' do

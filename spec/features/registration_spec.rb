@@ -1,15 +1,19 @@
 require 'rails_helper'
 
-RSpec.feature "Homes", type: :feature do
-  context 'without sign up' do
-    scenario 'visit home page' do
+RSpec.feature "Home", type: :feature do
+  describe 'without logging in' do
+    it ' should visit home page' do
       visit(root_path)
       expect(find('h1')).to have_content('Sign In / Sign Up as Admin')
     end
+    it 'should redirect to sign in page' do 
+      visit(see_books_path)
+      expect(current_path).to eq(sign_in_path)
+    end
   end
 
-  describe 'signing up' do
-    let(:user) { build(:user) }
+  describe 'after signing up' do
+    let(:user) { build(:user, email: "dev@example.com") }
 
     before :each do
       visit sign_up_path
@@ -31,6 +35,13 @@ RSpec.feature "Homes", type: :feature do
       fill_in 'Confirm password', with: user.confirm_password
       click_button 'Sign Up'
       expect(page).to have_content("Successfully created account")
+    end
+
+    it 'should redirect to see books path' do 
+      fill_in 'Confirm password', with: user.confirm_password
+      click_button 'Sign Up'
+      visit(see_books_path)
+      expect(current_path).to eq(see_books_path)
     end
     it 'logout successfully' do
       fill_in 'Confirm password', with: user.confirm_password
