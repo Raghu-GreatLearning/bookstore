@@ -16,7 +16,7 @@
   <div>
     Issue Status:
     <span class="text-danger">
-    <% if @book[:issued]%>
+    <% if @book.issued_books.present?%>
       issued
     <%else%>
       Not issued
@@ -26,25 +26,25 @@
   <div>
     Issued To:
     <span class="text-primary fs-5">
-    <% if @book[:issuedTo] == 'student' || @book[:issuedTo] == 'return' %>
+    <% if !@book.issued_books.present?%>
       Not Issued Yet
     <%else%>
-      <%= @book[:issuedTo]%> 
+      <%= @book.issued_books.first.student.name%> 
     <%end%><span>
   </div>
 
   <div>
-    <%if @book[:issued]%>
+    <%if @book.issued_books.present?%>
       <div>
-        Issue Date : <%= @book[:issuedDate]%>
+        Issue Date : <%= @book.issued_books.first.issued_date%>
       </div>
       <div>
-        Return Date : <%= @book[:returnDate]%>
+        Return Date : <%= @book.issued_books.first.return_Date%>
       </div>
     <%end%>
   </div>
 </div>
 
-<% if @book[:issued]%>
+<% if @book.issued_books.present?%>
   <div class="btn btn-outline-info p-0"><%= link_to "Recieve Book", return_book_path(id: @book[:id]), class:"nav-link" %></div>
 <%end%>

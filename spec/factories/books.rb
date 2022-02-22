@@ -4,6 +4,6 @@ FactoryBot.define do
     author { Faker::Alphanumeric.alpha(number: 10)}
     published_in { Faker::Number.within(range: 1800..2020) }
     volume { Faker::Number.between(from: 1, to: 10)  }
-    issued {false}
+    student
   end
 end

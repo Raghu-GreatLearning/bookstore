@@ -10,17 +10,17 @@ class BookIssueController < ApplicationController
   end
   
   def create
-    @student = Student.new(student_params)
-    puts params[:id]
-    if Book.check_issue_status(@student)
+    @student = Student.new
+    @book = Book.find_by(title: params[:book_issued])
+    if Book.check_issue_status(params[:book_issued])
       redirect_to see_books_path, alert: "Book Already issued"
-    elsif @student.save
-      Book.update_book(@student)
+    elsif Student.valiadte_student(params)
+      # puts Student.find_by(name: params[:name]).id
+      Student.update_student(params)
       redirect_to see_books_path, notice: "Book Issued"
     else
       # render :new, status: :unprocessable_entity, id: params[:id]
-
-      redirect_to issue_book_url(id: params[:id]), alert: "Students details are not available"
+      redirect_to issue_book_url(id: @book.id), alert: "Students details are not available"
     end
   end
 
@@ -29,9 +29,4 @@ class BookIssueController < ApplicationController
     redirect_to see_books_path, notice: "Book Returned"
   end
 
-  private
-
-  def student_params
-    params.require(:student).permit(:name, :email, :bookIssued, :issuedDate, :returnDate)
-  end
 end

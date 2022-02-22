@@ -23,7 +23,7 @@
           <%= book.published_in%></span>
         </div>
         <div class="ms-auto">
-          <% if book[:issued] %>
+          <% if book.issued_books.present? %>
             <div class="btn btn-danger">issued</div>
           <%else%>
             <div class="btn btn-warning p-0"><%= link_to "Issue Book", issue_book_path(id: book[:id]), class:"nav-link"%></div>
@@ -31,7 +31,7 @@
           <div class="btn btn-outline-info p-0"><%= link_to "Show Details", show_book_path(id: book[:id]), class:"nav-link"%></div>
         </div>
         <div>
-          <% if !book[:issued]%>
+          <% if !book.issued_books.present?%>
             <%= button_to "Remove Book", delete_book_path(id: book[:id]), method: :delete, class:"btn btn-outline-secondary ms-2"%>
           <%end%>
         </div>

@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:password) }
     it { should validate_presence_of(:confirm_password) }
-    it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
+    # it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
     it 'should not take invalid emails' do
       expect(user).to_not allow_value('something').for(:email)
       expect(user.errors.full_messages.to_sentence).to eq('Email is invalid')

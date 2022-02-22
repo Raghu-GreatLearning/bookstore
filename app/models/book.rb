@@ -3,27 +3,33 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :published_in, presence: true
   validates :volume, presence: true
+  has_many :issued_books
+  has_many :students, through: :issued_books
 
-  def self.check_issue_status(student)
-    @book = Book.find_by(title: student[:bookIssued])
-    @book[:issued]
+  def self.check_issue_status(title)
+    @book = Book.find_by(title: title)
+    @book.students.present?
   end
 
-  def self.update_book(student)
-    @book = Book.find_by(title: student[:bookIssued])
-    @book[:issued] = true
-    @book[:issuedTo] = student[:name]
-    @book[:issuedDate] = student[:issuedDate].to_s
-    @book[:returnDate] = student[:returnDate].to_s
-    @book.save
+
+  def self.update_book(params,student)
+    @book = Book.find_by(title: params[:book_issued])
+    puts(@book)
+    puts "************"
+    @book.students << student
+    puts(@book.issued_books.first)
+    issued_book_record= @book.issued_books.first 
+    issued_book_record.issued = true
+    issued_book_record.issued_date = params[:issued_date].to_s
+    issued_book_record.return_Date = params[:issued_date].to_s
+    issued_book_record.save
+
   end
 
   def self.book_returned(params)
     @book = Book.find(params[:id])
-    @book[:issued] =false
-    @student = Student.find_by(name: @book[:issuedTo])
-    @book[:issuedTo] = "return"
-    @student.destroy
-    @book.save
+    @book.issued_books.destroy_all
+    @book.students.destroy_all
+
   end
 end

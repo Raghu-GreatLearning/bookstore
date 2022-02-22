@@ -3,10 +3,6 @@ class CreateStudents < ActiveRecord::Migration[5.2]
     create_table :students do |t|
       t.string :name, null: false
       t.string :email, null: false
-      t.string :bookIssued, null: false
-      t.date :issuedDate, null: false
-      t.date :returnDate, null: false
-
       t.timestamps
     end
   end

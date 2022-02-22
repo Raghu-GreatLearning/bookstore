@@ -4,6 +4,8 @@ RSpec.describe Book, type: :model do
   let(:book) {create(:book)} 
   let(:student) {create(:student)}
   let(:my_book) {build(:book)} 
+  let(:new_student) {create(:new_student)}
+
   
   describe 'schema' do
     it { should have_db_column(:title).of_type(:string) }
@@ -18,7 +20,7 @@ RSpec.describe Book, type: :model do
     it { should validate_presence_of(:author) }
     it { should validate_presence_of(:published_in) }
     it { should validate_presence_of(:volume) }
-    it { should validate_uniqueness_of(:title).ignoring_case_sensitivity }
+    # it { should validate_uniqueness_of(:title).ignoring_case_sensitivity }
     
   end
   
@@ -27,7 +29,7 @@ RSpec.describe Book, type: :model do
       expect{ Book.check_issue_status}.to raise_error(ArgumentError)
     end
 
-    it 'checck update_book' do
+    it 'check update_book' do
       expect{ Book.update_book}.to raise_error(ArgumentError)
     end
 
@@ -50,14 +52,12 @@ RSpec.describe Book, type: :model do
   describe 'vaidating book data' do
     it 'vaidate that book is not issued' do
       @book = book
-      expect(Book.check_issue_status(student)).to eq(false)
+      expect(Book.check_issue_status(@book.title)).to eq(false)
     end
 
     it 'vaidate if book is issued can\'t issue it again' do
-      @book = book
-      @book[:issued] = true
-      @book.save
-      expect(Book.check_issue_status(student)).to eq(true)
+      Student.update_student(new_student)
+      expect(Book.check_issue_status(@book.title)).to eq(true)
     end
 
     it 'update book status after issuing it' do

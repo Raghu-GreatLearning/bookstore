@@ -10,27 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_083640) do
+ActiveRecord::Schema.define(version: 2022_02_22_065856) do
 
   create_table "books", force: :cascade do |t|
     t.string "title", null: false
     t.string "author", null: false
     t.integer "published_in", null: false
     t.integer "volume"
-    t.boolean "issued", default: false, null: false
-    t.string "issuedTo", default: "student", null: false
-    t.string "issuedDate"
-    t.string "returnDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "issued_books", force: :cascade do |t|
+    t.boolean "issued", default: false, null: false
+    t.string "issued_to", default: "student", null: false
+    t.string "issued_date"
+    t.string "return_Date"
+    t.integer "book_id"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_issued_books_on_book_id"
+    t.index ["student_id"], name: "index_issued_books_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
-    t.string "bookIssued", null: false
-    t.date "issuedDate", null: false
-    t.date "returnDate", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
