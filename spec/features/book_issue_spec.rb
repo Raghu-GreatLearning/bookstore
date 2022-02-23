@@ -30,8 +30,8 @@ RSpec.feature "See books", type: :feature do
       expect(page).to have_content(book.title)
       fill_in "Name", with: student.name
       fill_in "Email", with: student.email
-      fill_in "Issueddate", with: student.issuedDate
-      fill_in "Returndate", with: student.returnDate
+      fill_in "Issued date", with: '2014-09-23'
+      fill_in "Return date", with: '2014-09-29'
       click_button("Issue Book")
       expect(page).to have_content('issued')
     end
@@ -49,8 +49,8 @@ RSpec.feature "See books", type: :feature do
       expect(page).to have_content(book.title)
       fill_in "Name", with: student.name
       fill_in "Email", with: student.email
-      fill_in "Issueddate", with: student.issuedDate
-      fill_in "Returndate", with: student.returnDate
+      fill_in "Issued date", with: '2014-09-23'
+      fill_in "Return date", with: '2014-09-23'
       click_button("Issue Book")
       expect(page).to have_content('issued')
       click_link("Show Details")
@@ -68,10 +68,8 @@ RSpec.feature "See books", type: :feature do
       expect(page).to have_content('Successfully Added book to database')
       click_link("Issue Book")
       expect(page).to have_content(book.title)
-      fill_in "Name", with: student.name
-      fill_in "Email", with: student.email
       click_button("Issue Book")
-      expect(page).to have_content('Not issued')
+      expect(page).to have_content('Students details are not available')
     end
 
     it 'Return a book' do
@@ -87,8 +85,8 @@ RSpec.feature "See books", type: :feature do
       expect(page).to have_content(book.title)
       fill_in "Name", with: student.name
       fill_in "Email", with: student.email
-      fill_in "Issueddate", with: student.issuedDate
-      fill_in "Returndate", with: student.returnDate
+      fill_in "Issued date", with: '2014-09-23'
+      fill_in "Return date", with: '2014-09-23'
       click_button("Issue Book")
       expect(page).to have_content('issued')
       click_link("Show Details")

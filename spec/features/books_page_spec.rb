@@ -13,6 +13,7 @@ RSpec.feature "See books", type: :feature do
       fill_in "Password", with: admin.password
       fill_in "Confirm password", with: admin.confirm_password
       click_button("Sign Up")
+      expect(page).to have_content("This is page after sigup")
     end
 
     it 'Check sign Up' do
