@@ -46,11 +46,14 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'shoulda-callback-matchers'
   gem 'sqlite3'
+  gem 'cucumber-rails', require: false
+  # database_cleaner is not mandatory, but highly recommended
+  gem 'database_cleaner'
 end
 
-group :production do
-  gem 'pg', '~> 1.3', '>= 1.3.3'
-end
+# group :production do
+#   gem 'pg', '~> 1.3', '>= 1.3.3'
+# end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
